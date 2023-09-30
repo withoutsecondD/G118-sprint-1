@@ -13,11 +13,11 @@ import models.Task;
 @WebServlet(value = "/")
 public class HomeServlet extends HttpServlet {
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws ServletException, IOException {
-    List<Task> tasks = DbManager.getTasks();
-    req.setAttribute("zadaniya", tasks);
-    req.getRequestDispatcher("home.jsp").forward(req, resp);
-  }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        List<Task> tasks = DbManager.getTasks();
+        req.setAttribute("zadaniya", tasks);
+        req.getRequestDispatcher("home.jsp").forward(req, resp);
+    }
 }

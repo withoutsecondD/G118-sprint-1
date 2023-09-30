@@ -15,7 +15,7 @@
 <body class="container-fluid">
 <%@include file="navbar.jsp" %>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
     ADD TASK
 </button>
 
@@ -56,6 +56,7 @@
         <th scope="col">NAME</th>
         <th scope="col">DESCRIPTION</th>
         <th scope="col">DEADLINE DATE</th>
+        <th scope="col">DETAILS</th>
     </tr>
     </thead>
     <tbody>
@@ -68,6 +69,12 @@
         <td><%=task.getName()%></td>
         <td><%=task.getDescription()%></td>
         <td><%=task.getDeadlineDate()%></td>
+        <td>
+            <form action="/taskDetails" method="get">
+                <input type="hidden" name="id" value="<%=task.getId()%>">
+                <button class="btn btn-primary">DETAILS</button>
+            </form>
+        </td>
     </tr>
     <%
         }
